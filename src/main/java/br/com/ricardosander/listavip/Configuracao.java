@@ -10,12 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class Configuracao {
 
-    @RequestMapping("/ola")
-    @ResponseBody
-    public String ola() {
-        return "Olá, bem vindo ao sistema lista VIPs.";
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Configuracao.class, args);
     }

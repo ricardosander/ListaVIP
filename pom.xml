@@ -9,11 +9,21 @@
     <version>0.0.1</version>
 
     <dependencies>
+
+        <!--Base do Spring Boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>1.5.8.RELEASE</version>
         </dependency>
+
+        <!--Templates do Spring MVC -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>
