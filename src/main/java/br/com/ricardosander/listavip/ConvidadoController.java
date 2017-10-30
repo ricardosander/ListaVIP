@@ -1,7 +1,7 @@
 package br.com.ricardosander.listavip;
 
 import br.com.ricardosander.listavip.model.Convidado;
-import br.com.ricardosander.listavip.repository.ConvidadoRepository;
+import br.com.ricardosander.listavip.services.ConvidadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConvidadoController {
 
     @Autowired
-    private ConvidadoRepository convidadoRepository;
+    private ConvidadoService service;
 
     @RequestMapping("/")
     public String index() {
@@ -23,7 +23,7 @@ public class ConvidadoController {
     @RequestMapping("/listaconvidados")
     public String listaConvidados(Model model) {
 
-        Iterable<Convidado> convidados = convidadoRepository.findAll();
+        Iterable<Convidado> convidados = service.buscaTodos();
         model.addAttribute("convidados", convidados);
 
         return "listaconvidados";
@@ -34,9 +34,9 @@ public class ConvidadoController {
 
         Convidado convidado = new Convidado(nome, email, telefone);
 
-        convidadoRepository.save(convidado);
+        service.salvar(convidado);
 
-        Iterable<Convidado> convidados = convidadoRepository.findAll();
+        Iterable<Convidado> convidados = service.buscaTodos();
 
         model.addAttribute("convidados", convidados);
 
