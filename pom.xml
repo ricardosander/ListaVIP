@@ -17,6 +17,13 @@
             <version>1.5.8.RELEASE</version>
         </dependency>
 
+        <!-- Spring DevOps -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>1.5.8.RELEASE</version>
+        </dependency>
+
         <!--Templates do Spring MVC -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
